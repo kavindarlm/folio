@@ -9,7 +9,7 @@ html{
     font-family:'Montserrat', sans-serif  ;
 }
 a{
-    text-decoration: none;
+    text-decoration: none ;
 }
 .container{
     min-height: 100vh;
@@ -24,14 +24,142 @@ img{
     object-fit: cover;
 }
 
+                /* Nav- section */
 
-                 /*header section*/
-#head{
-    background-image: url(.//img/img1.jpeg);
+
+nav {
+    position: fixed;
+    /* background-color: rgba(0, 0, 0, 0.477); */
+    width: 729px;
+    display: table;
+    /* margin: 0 auto; */
+    transform: translateY(-50%);
+    margin-top: 40px;
+    right: 0px;
+    left: 0px;
+    margin-right: 500px;
+    margin-left: 300px;
+    
+
+}
+  
+nav a {
+    position: relative;
+    width: 33.333%;
+    display: table-cell;
+    text-align: center;
+    color: #0713f6;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.2s ease color;
+}
+  
+nav a:before,
+nav a:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s ease transform;
+}
+  
+nav a:before {
+    top: 0;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+}
+  
+nav a:after {
+    top: 5px;
+    left: 18px;
+    width: 4px;
+    height: 4px;
+}
+  
+nav a:nth-child(1):before {
+    background-color: yellow;
+}
+  
+nav a:nth-child(1):after {
+    background-color: red;
+}
+  
+nav a:nth-child(2):before {
+    background-color: #00e2ff;
+}
+  
+nav a:nth-child(2):after {
+    background-color: #89ff00;
+}
+  
+nav a:nth-child(3):before {
+    background-color: rgb(236, 221, 0);
+}
+  
+nav a:nth-child(3):after {
+    background-color: rgb(224, 24, 6);
+}
+
+nav a:nth-child(4):before {
+    background-color: rgb(0, 128, 28);
+}
+  
+nav a:nth-child(4):after {
+    background-color: rgb(216, 119, 112);
+}
+  
+#indicator {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: 30px;
+    height: 3px;
+    background-color: rgb(11, 239, 42);
+    border-radius: 5px;
+    transition: 0.2s ease left;
+}
+  
+nav a:hover {
+    color: rgb(125, 121, 121);
+}
+  
+nav a:hover:before,
+nav a:hover:after {
+    transform: scale(1);
+}
+  
+nav a:nth-child(1):hover ~ #indicator {
+    background: linear-gradient(130deg, yellow, red);
+}
+  
+nav a:nth-child(2):hover ~ #indicator {
+    left: 34%;
+    background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+  
+nav a:nth-child(3):hover ~ #indicator {
+    left: 70%;
+    background: linear-gradient(130deg, purple, palevioletred);
+}
+
+nav a:nth-child(4):hover ~ #indicator {
+    left: 90%;
+    background: linear-gradient(130deg, purple, palevioletred);
+}
+/*End Of Nav- section */  
+
+
+/*header section*/
+               
+#images{
     background-size: cover;
     background-position: top center;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: -1;
 }
 #head::after{
     content: '';
@@ -85,32 +213,34 @@ img{
     color: white;
     background-color: red;
 }
-               /*end of header section*/
+/*end of header section*/
 
 /* Services section*/
-#services{}
+
 #services .services{
     flex-direction: column;
     text-align: center;
-    max-width: 1500px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 60px 0;
+    background-color: rgb(5, 2, 79);
 }
 #services .section-title{
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 300;
     color:black;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: .2rem;
     text-align: center;
+    color: red;
 }
 #services .service-top p{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-top: 5px;
     line-height: 2.5rem;
     font-weight: 300;
     letter-spacing: .05rem;
+    color: white;
 }
 #services .service-bottom{
     display: flex;
@@ -139,7 +269,7 @@ img{
     top: 0;
     height: 100%;
     width: 100%;
-    background-color:rgb(210, 210, 252);
+    background-color:rgb(220, 252, 210);
     opacity: .8;
     z-index: -1;
 }
@@ -154,14 +284,14 @@ img{
     object-fit: cover;
 }
 #services .service-item h2{
-    font-size: 2rem;
-    color: black;
+    font-size: 2.4rem;
+    color: rgb(255, 0, 0);
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 #services .service-item p{
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.9rem;
     
 }
@@ -172,6 +302,7 @@ img{
     text-transform: uppercase;
     color: red;
     font-size: 40px;
+    padding-bottom: 15px;
 }
 #about .about{
     flex-direction: column-reverse;
@@ -188,14 +319,14 @@ img{
     width: 100%;
 }
 #about .col-right h2{
-    font-size: 1.9rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 1000;
     letter-spacing: .2rem;
     margin-bottom: 10px;
 }
 #about .col-right p{
     margin-bottom: 20px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     letter-spacing: .1rem;
     line-height: 20px;
 
@@ -221,11 +352,16 @@ img{
     width: 98%;
     border: 7px solid red;
     z-index: -1;
-
+}
+#about .col-right .linka{
+    font-size: 15px;
 }
 /*End of About section*/
 
 /* Contact section*/
+#contact{
+    border-top: 5px solid  rgb(5, 2, 79);
+}
 #contact .contact{
     flex-direction: column;
     max-width: 1200px;
@@ -236,7 +372,7 @@ img{
 }
 #contact .contact-item{
     width: 80%;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
     border-radius: 10px;
     padding: 30px;
@@ -246,6 +382,7 @@ img{
     align-items: center;
     flex-direction: column;
     box-shadow: 0px 0px 18px  ;
+    background-color: white;
 }
 #contact .contact-item:hover{
     box-shadow: 0px 0px 5px 0;
@@ -270,7 +407,7 @@ img{
 
 /*Footer section*/
 #footer{
-    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    background-color: rgb(5, 2, 79);
 }
 #footer .footer{
     min-height: 200px;
@@ -403,6 +540,6 @@ img{
         text-align: left;
         padding-left: 20px;
     }
-
-
 }
+
+/*    media quary for mobile phone    */
